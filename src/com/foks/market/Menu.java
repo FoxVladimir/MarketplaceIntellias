@@ -7,18 +7,21 @@ class Menu {
     static int idUser;
     static int idProduct;
 
+    //показ листа покупців
     public static void displayCustomers(){
         for(Customer customer : Customer.customers){
             System.out.println(customer.toString());
         }
     }
 
+    //показ листа товарів
     public static void displayProducts(){
         for(Product product : Product.products){
             System.out.println(product.toString());
         }
     }
 
+    //запит ID покупця для проведення покупки
     public static void idCustomer(){
         boolean correctId = false;
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +41,8 @@ class Menu {
             }
         }
     }
+
+    //запит ID товару для проведення покупки
     public static void idProduct(){
         boolean correctId = false;
         Scanner scanner = new Scanner(System.in);
@@ -58,6 +63,8 @@ class Menu {
         }
     }
 
+    //перевірка на достатність грошей
+    //якщо грошей достатньо - відбувається покупка, запис даних в лист покупця та лист товару
     public static void enoughMoney() throws MoneyShortageException {
         Customer buyingCastomer = null;
         Product buyingProduct = null;
@@ -97,12 +104,14 @@ class Menu {
         }
     }
 
+    //ініціалізація перевірок ID та покупка
     public static void buyGoods() throws MoneyShortageException {
         idCustomer();
         idProduct();
         enoughMoney();
     }
 
+    //знаходимо покупки товарів по ID покупця
     static void getItemsByIdUsers(){
         boolean correctId = false;
         Scanner scanner = new Scanner(System.in);
@@ -124,6 +133,7 @@ class Menu {
         }
     }
 
+    //знаходимо покупців по ID товару
     static void getUsersByIdItems(){
         boolean correctId = false;
         Scanner scanner = new Scanner(System.in);

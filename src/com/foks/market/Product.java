@@ -5,6 +5,7 @@ import java.util.List;
 
 class Product {
 
+    //листи даних по покупцям кожного товару
     public static List<Customer> product1List = new ArrayList<>();
     public static List<Customer> product2List = new ArrayList<>();
     public static List<Customer> product3List = new ArrayList<>();
@@ -41,6 +42,7 @@ class Product {
                 '}';
     }
 
+    //ініціалізація 3-х товарів
     static void firstAddProducts(){
         Product product1 = new Product(1, "Phone", 1000);
         Product product2 = new Product(2, "TV", 2000);
@@ -50,6 +52,7 @@ class Product {
         products.add(product3);
     }
 
+    //запис покупців до листа товару
     static void addCustomers(int id, Customer customer){
         switch (id){
             case 1:

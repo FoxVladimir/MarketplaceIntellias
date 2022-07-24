@@ -5,6 +5,10 @@ import java.util.List;
 
 class Customer {
 
+    public static List<Product> customer1List = new ArrayList<>();
+    public static List<Product> customer2List = new ArrayList<>();
+    public static List<Product> customer3List = new ArrayList<>();
+
     private int id;
     private String firstName;
     private String lastName;
@@ -23,7 +27,7 @@ class Customer {
         return lastName;
     }
 
-    public long getMoney() {
+    public int getMoney() {
         return money;
     }
 
@@ -55,5 +59,19 @@ class Customer {
         customers.add(customer1);
         customers.add(customer2);
         customers.add(customer3);
+    }
+
+    static void addProducts(int id, Product product){
+        switch (id){
+            case 1:
+                customer1List.add(product);
+                break;
+            case 2:
+                customer2List.add(product);
+                break;
+            case 3:
+                customer3List.add(product);
+                break;
+        }
     }
 }

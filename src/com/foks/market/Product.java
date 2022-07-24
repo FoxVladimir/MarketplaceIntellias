@@ -7,7 +7,7 @@ class Product {
 
     private int id;
     private String name;
-    private long price;
+    private int price;
     static List<Product> products = new ArrayList<>();
 
     int getId() {
@@ -22,7 +22,7 @@ class Product {
         return price;
     }
 
-    public Product(int id, String name, long price) {
+    Product(int id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -37,12 +37,12 @@ class Product {
                 '}';
     }
 
-    public static void firstAddProducts(){
-        Product product1 = new Product(1, "TV", 1000L);
-        Product product2 = new Product(2, "laptop", 2000L);
-        Product product3 = new Product(3, "Phone", 2500L);
+    static void firstAddProducts(){
+        Product product1 = new Product(1, "Phone", 1000);
+        Product product2 = new Product(2, "TV", 2000);
+        Product product3 = new Product(3, "Laptop", 2500);
         products.add(product1);
         products.add(product2);
-        products.add(product3;
+        products.add(product3);
     }
 }
